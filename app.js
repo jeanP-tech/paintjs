@@ -20,14 +20,12 @@ ctx.lineWidth = 2.5;
 let painting = false;
 let filling = false;
 
-function stopPainting() {
-    console.log("stop");
-    painting: false;
+function startPainting() {
+    painting = true;
 }
 
-function startPainting() {
-    console.log("start");
-    painting = true;
+function stopPainting() {
+    painting = false;
 }
 
 function onMouseMove(event){
@@ -74,7 +72,7 @@ function handleCM(event){
 }
 
 function handleSaveClick() {
-    const image = canvas.toDataURL("image/jpeg");
+    const image = canvas.toDataURL();
     const link = document.createElement("a");
     link.href = image;
     link.download = "PaintJS";
